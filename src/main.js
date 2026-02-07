@@ -63,12 +63,7 @@ const sampleTable = initTable({
 
 // @todo: инициализация
 const {applyPagination, updatePagination} = initPagination(
-     {
-        pages: sampleTable.pagination.elements.pages,
-        fromRow: sampleTable.pagination.elements.fromRow,
-        toRow: sampleTable.pagination.elements.toRow,
-        totalRows: sampleTable.pagination.elements.totalRows
-    },             // передаём сюда элементы пагинации, найденные в шаблоне
+    sampleTable.pagination.elements,             // передаём сюда элементы пагинации, найденные в шаблоне
     (el, page, isCurrent) => {                    // и колбэк, чтобы заполнять кнопки страниц данными
         const input = el.querySelector('input');
         const label = el.querySelector('span');
