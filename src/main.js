@@ -48,15 +48,10 @@ async function render(action) {
     query = applySorting(query, state, action);
     query = applyPagination(query, state, action);
 
-
     const { total, items } = await api.getRecords(query);
 
     updatePagination(total, query);
     sampleTable.render(items);
-    console.log('QUERY', query);
-console.log('ITEMS', items.length);
-console.log('TOTAL', total);
-
 }
 
 const sampleTable = initTable({
